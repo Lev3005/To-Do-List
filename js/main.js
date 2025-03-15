@@ -82,5 +82,11 @@ function saveLS() {
 if (localStorage.getItem("tasksHTML")) {
 
     taskList.innerHTML = localStorage.getItem("tasksHTML")
+
+    if (taskList.children.length > 0) {
+
+        taskNone.classList.add("none")
+
+    }
     
 }
