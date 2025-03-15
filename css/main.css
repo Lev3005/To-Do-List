@@ -94,6 +94,11 @@ html, body {
   display: none !important;
 }
 
+.task__text-done {
+  color: rgba(0,0,0,0.3);
+  text-decoration:line-through;
+}
+
 /* ---------------------------- */
 
 .header__title {
@@ -214,10 +219,62 @@ html, body {
 
 @media (max-width: 570px) {
   .header__title {
-    font-size: 39px;
+    padding: 7.5px 0px 22.5px 0px;
+    font-size: 25px;
+  }
+  
+  .task__list {
+    padding: 7.5px;
+    border-radius: 5px;
+  }
+  
+  .task__none-title {
+    padding: 7.5px;
+    font-size: 15px;
+  }
+  
+  .task__list-list {
+    gap: 7.5px;
+  }
+  
+  .task {
+    border-radius: 5px;
+    padding: 7.5px;
+    font-size: 12px;
+  }
+  
+  .task__button-img {
+    width: 25px;
+  }
+  
+  .task__write {
+    margin: 22.5px 0px 0px 0px;
+    padding: 7.5px;
+    border-radius: 5px;
+  }
+  
+  .task__write-title {
+    padding: 7.5px;
+    font-size: 15px;
+  }
+  
+  .form__input-input {
+    height: 25px;
+    width: 250px;
+    border: 1px solid #CDCDCD;
+    border-radius: 5px;
+    margin: 0px 0px 7.5px 0px;
+    padding: 7.5px;
+    font-size: 12px;
+  }
+  
+  .form__button {
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 12px;
   }
 
-  .task__write-title {
-    font-size: 23px;
+  .form__input-input::placeholder {
+    font-size: 12px;
   }
 }

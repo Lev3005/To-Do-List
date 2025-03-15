@@ -3,6 +3,12 @@ const formButton = document.querySelector(".form__button")
 const taskList = document.querySelector(".task__list-list")
 const taskNone = document.querySelector(".task__none-title")
 
+if (taskList.children.length <= 0) {
+
+    taskNone.classList.remove("none")
+
+}
+
 formButton.addEventListener("click", function() {
 
     const formInput = input.value
@@ -28,6 +34,8 @@ formButton.addEventListener("click", function() {
 
     }
 
+    saveLS()
+
 })
 
 taskList.addEventListener("click", function() {
@@ -46,4 +54,33 @@ taskList.addEventListener("click", function() {
 
     }
 
+    saveLS()
+
 })
+
+taskList.addEventListener("click", function() {
+
+    if (event.target.dataset.action === "done") {
+
+        const parentDone = event.target.closest(".task")
+        const taskText = parentDone.querySelector(".task__text")
+
+        taskText.classList.toggle("task__text-done")
+
+    }
+
+    saveLS()
+
+})
+
+function saveLS() {
+
+    localStorage.setItem("tasksHTML", taskList.innerHTML)
+
+}
+
+if (localStorage.getItem("tasksHTML")) {
+
+    taskList.innerHTML = localStorage.getItem("tasksHTML")
+    
+}
